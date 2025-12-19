@@ -8,7 +8,7 @@ A **responsive movie search web app** built with **HTML, CSS, and JavaScript** t
 
 Home Page:
 
-![Movie Search App Home](</Screenshot%20(443).PNG>)
+![Movie Search App Home](</Screenshot%20(443).png>)
 
 ## 🖼 Demo
 
