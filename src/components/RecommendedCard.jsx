@@ -29,8 +29,9 @@ const RecommendedCard = ({ movie, isBookmarked, onToggleBookmark }) => {
 
             <div className="">
                 <p className="text-white/70 text-sm mb-1">
-                    {movie.release_date?.slice(0, 4)}
-                    {" • Movie"}
+                    {movie.media_type === "movie" ? movie.release_date?.slice(0, 4) : movie.first_air_date?.slice(0, 4)}
+                    {" • "}
+                    {movie.media_type === "movie" ? "Movie" : "TV Series"}
                 </p>
                 <h3 className="text-white font-semibold text-lg">
                     {movie.title || movie.name}
