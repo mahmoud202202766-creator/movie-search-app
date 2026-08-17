@@ -8,9 +8,9 @@ import Bookmarks from "./components/pages/Bookmarks";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#10141E] text-white flex">
+    <div className="min-h-screen bg-[#10141E] text-white flex overflow-hidden">
       <Navbar />
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-8 min-w-0">
         <Routes>
           <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />} />
