@@ -7,3 +7,10 @@ export const getTrending = async () => {
   const data = await res.json();
   return data.results;
 };
+
+export const getRecommended = async () => {
+  const res = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+  if (!res.ok) throw new Error("Failed to fetch recommended");
+  const data = await res.json();
+  return data.results;
+};

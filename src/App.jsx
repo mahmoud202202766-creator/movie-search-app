@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router";
 
 import Navbar from "./components/Navbar";
-import Home from "./components/pages/Home";
-import Movies from "./components/pages/Movies";
-import TvShows from "./components/pages/TvShows";
-import Bookmarks from "./components/pages/Bookmarks";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import TvShows from "./pages/TvShows";
+import Bookmarks from "./pages/Bookmarks";
 
 function App() {
   return (
