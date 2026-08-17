@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import TvShows from "./pages/TvShows";
 import Bookmarks from "./pages/Bookmarks";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+
 
 function App() {
   return (
@@ -16,7 +19,8 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/tv-shows" element={<TvShows />} />
           <Route path="/bookmarks" element={< Bookmarks />} />
-
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </div>

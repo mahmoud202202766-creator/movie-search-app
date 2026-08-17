@@ -3,8 +3,12 @@ import { ChevronRight, ChevronLeft } from "lucide-react"
 import { getTrending, getRecommended } from "../api/tmdb"
 import { MovieCard } from "../components/MovieCard";
 import RecommendedCard from "../components/RecommendedCard";
+import { useAuth } from "../context/AuthContext"
+
 
 const Home = () => {
+    const { user } = useAuth();
+    console.log(user);
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [recommendedMovies, setRecommendedMovies] = useState([]);
     const [bookmarked, setBookmarked] = useState({});
@@ -45,7 +49,7 @@ const Home = () => {
                 <button
                     onClick={scrollLeft}
                     className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                > 
+                >
                     <ChevronLeft size={24} />
                 </button>
 
