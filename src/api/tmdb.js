@@ -25,3 +25,17 @@ export async function getRecommended() {
 
   return [...movies, ...tvShows];
 }
+
+export async function getPopularMovies() {
+  const res = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+  if (!res.ok) throw new Error("Failed to fetch popular movies");
+  const data = await res.json();
+  return data.results.map((item) => ({ ...item, media_type: "movie" }));
+}
+
+export async function getPopularTvShows() {
+  const res = await fetch(`${BASE_URL}/tv/popular?api_key=${API_KEY}`);
+  if (!res.ok) throw new Error("Failed to fetch popular TV shows");
+  const data = await res.json();
+  return data.results.map((item) => ({ ...item, media_type: "tv" }));
+}
