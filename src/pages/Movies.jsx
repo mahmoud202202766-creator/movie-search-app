@@ -4,7 +4,7 @@ import RecommendedCard from "../components/RecommendedCard"
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
-    const [bookmarked, setBookmarked] = useState({});
+
 
     useEffect(() => {
         const getMovies = async () => {
@@ -14,9 +14,7 @@ const Movies = () => {
         getMovies()
     }, [])
 
-    const toggleBookmark = (id) => {
-        setBookmarked((prev) => ({ ...prev, [id]: !prev[id] }));
-    }
+
 
     return (
         <div className="grid grid-cols-4 gap-6">
@@ -24,8 +22,6 @@ const Movies = () => {
                 <RecommendedCard
                     key={movie.id}
                     movie={movie}
-                    isBookmarked={!!bookmarked[movie.id]}
-                    onToggleBookmark={toggleBookmark}
                 />
             ))}
         </div>

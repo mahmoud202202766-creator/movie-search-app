@@ -11,7 +11,6 @@ const Home = () => {
     console.log(user);
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [recommendedMovies, setRecommendedMovies] = useState([]);
-    const [bookmarked, setBookmarked] = useState({});
     const scrollRef = useRef(null);
 
     useEffect(() => {
@@ -38,9 +37,7 @@ const Home = () => {
         scrollRef.current?.scrollBy({ left: -400, behavior: "smooth" });
     }
 
-    const toggleBookmark = (id) => {
-        setBookmarked((prev) => ({ ...prev, [id]: !prev[id] }));
-    }
+
 
     return (
         <div>
@@ -58,8 +55,7 @@ const Home = () => {
                         <MovieCard
                             key={movie.id}
                             movie={movie}
-                            isBookmarked={!!bookmarked[movie.id]}
-                            onToggleBookmark={toggleBookmark} />
+                        />
                     ))}
                 </div>
 
@@ -77,8 +73,7 @@ const Home = () => {
                     <RecommendedCard
                         key={movie.id}
                         movie={movie}
-                        isBookmarked={!!bookmarked[movie.id]}
-                        onToggleBookmark={toggleBookmark} />
+                    />
                 ))}
             </div>
 

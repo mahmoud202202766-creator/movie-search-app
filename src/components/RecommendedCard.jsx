@@ -1,6 +1,9 @@
+import { useBookmarks } from "@/context/BookmarksContext";
 import { Bookmark } from "lucide-react";
 
-const RecommendedCard = ({ movie, isBookmarked, onToggleBookmark }) => {
+const RecommendedCard = ({ movie }) => {
+    const { bookmarked, toggleBookmark } = useBookmarks();
+    const isBookmarked = !!bookmarked[movie.id];
     return (
         <div
             key={movie.id}
@@ -17,7 +20,7 @@ const RecommendedCard = ({ movie, isBookmarked, onToggleBookmark }) => {
                 />
 
                 <button
-                    onClick={() => onToggleBookmark(movie.id)}
+                    onClick={() => toggleBookmark(movie)}
                     className="absolute top-3 right-3 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors duration-200"
                 >
                     <Bookmark

@@ -11,7 +11,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="w-24 bg-[#161D2F] flex items-center flex-col py-8 px-4 rounded-2xl m-4 justify-between">
+        <div className="w-24 bg-[#161D2F] flex items-center flex-col py-8 px-4 rounded-2xl m-4 justify-between h-screen">
             <div className="flex flex-col gap-8">
                 <Clapperboard className="text-red-500 mb-8" size={32} />
                 <NavLink to="/" end>
