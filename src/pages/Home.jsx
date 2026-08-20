@@ -3,15 +3,15 @@ import { ChevronRight, ChevronLeft } from "lucide-react"
 import { getTrending, getRecommended } from "../api/tmdb"
 import { MovieCard } from "../components/MovieCard";
 import RecommendedCard from "../components/RecommendedCard";
-import { useAuth } from "../context/AuthContext"
+
 
 
 const Home = () => {
-    const { user } = useAuth();
-    console.log(user);
+
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [recommendedMovies, setRecommendedMovies] = useState([]);
     const scrollRef = useRef(null);
+
 
     useEffect(() => {
         const getTrendingMovies = async () => {

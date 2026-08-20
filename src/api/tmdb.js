@@ -39,3 +39,14 @@ export async function getPopularTvShows() {
   const data = await res.json();
   return data.results.map((item) => ({ ...item, media_type: "tv" }));
 }
+
+export async function searchMulti(query) {
+  const res = await fetch(
+    `${BASE_URL}/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(query)}`,
+  );
+  if (!res.ok) throw new Error("Failed to search");
+  const data = await res.json();
+  return data.results.filter(
+    (item) => item.media_type === "movie" || item.media_type === "tv",
+  );
+}
